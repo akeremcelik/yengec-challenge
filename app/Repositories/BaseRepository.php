@@ -23,4 +23,30 @@ class BaseRepository implements BaseRepositoryInterface
     {
         return $this->query()->create($data);
     }
+
+    public function find(int $id): Model|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Builder|array|null
+    {
+        return $this->query()->find($id);
+    }
+
+    public function update(int $id, array $data): Model|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Builder|array|null
+    {
+        /**
+         * @var Model $model
+         */
+        $model = $this->find($id);
+        $model->update($data);
+
+        return $model;
+    }
+
+    public function delete(int $id): ?bool
+    {
+        /**
+         * @var Model $model
+         */
+        $model = $this->find($id);
+
+        return $model->delete();
+    }
 }

@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Integration extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'marketplace_id',
+        'user_id',
+        'username',
+        'password',
+    ];
 }
