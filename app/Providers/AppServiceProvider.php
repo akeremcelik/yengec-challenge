@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Services\LoginService;
 use App\Services\MarketplaceService;
 use App\Services\UserService;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -16,6 +17,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->singleton('UserService', UserService::class);
         $this->app->singleton('MarketplaceService', MarketplaceService::class);
+        $this->app->singleton('LoginService', LoginService::class);
     }
 
     /**

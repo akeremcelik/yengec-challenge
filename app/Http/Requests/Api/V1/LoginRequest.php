@@ -2,11 +2,9 @@
 
 namespace App\Http\Requests\Api\V1;
 
-use App\Enums\MarketplaceType;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class IntegrationLoginRequest extends FormRequest
+class LoginRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +22,7 @@ class IntegrationLoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'marketplace' => ['required', Rule::in(MarketplaceType::cases())],
-            'username' => ['required', 'min:3'],
+            'email' => ['required', 'min:3', 'email'],
             'password' => ['required', 'min:3'],
         ];
     }
