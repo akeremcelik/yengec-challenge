@@ -9,7 +9,7 @@ class UserServiceTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_create_user()
+    public function test_create_user_method()
     {
         $data = [
             'name' => fake()->name,

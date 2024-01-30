@@ -2,14 +2,13 @@
 
 namespace Tests\Feature;
 
-use App\Http\Resources\Api\V1\UserResource;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class RegisterTest extends TestCase
 {
-    public function test_register(): void
+    public function test_user_can_register(): void
     {
         $data = [
             'name' => fake()->name,

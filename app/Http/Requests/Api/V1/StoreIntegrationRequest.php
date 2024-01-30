@@ -6,7 +6,7 @@ use App\Enums\MarketplaceType;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class IntegrationLoginRequest extends FormRequest
+class StoreIntegrationRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

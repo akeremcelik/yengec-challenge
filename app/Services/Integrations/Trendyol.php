@@ -2,13 +2,7 @@
 
 namespace App\Services\Integrations;
 
-use App\Services\Integrations\Contracts\LoginInterface;
-
-class Trendyol implements LoginInterface
+class Trendyol
 {
-
-    public function login(string $username, string $password)
-    {
-        // TODO: Implement login() method.
-    }
+    //
 }

@@ -20,5 +20,7 @@ Route::prefix('v1')->group(function () {
     Route::post('register', [AuthController::class, 'register'])->name('register');
     Route::post('login', [AuthController::class, 'login'])->name('login');
 
-    Route::post('integration', [IntegrationController::class, 'login'])->name('integration.post');
+    Route::middleware('auth:api')->group(function () {
+        Route::apiResource('integration', IntegrationController::class)->only('store', 'update', 'destroy');
+    });
 });
