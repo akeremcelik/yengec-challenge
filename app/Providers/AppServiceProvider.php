@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Services\MarketplaceService;
 use App\Services\UserService;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\ServiceProvider;
@@ -14,6 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->singleton('UserService', UserService::class);
+        $this->app->singleton('MarketplaceService', MarketplaceService::class);
     }
 
     /**

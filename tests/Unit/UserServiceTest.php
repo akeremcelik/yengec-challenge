@@ -9,14 +9,6 @@ class UserServiceTest extends TestCase
 {
     use RefreshDatabase;
 
-    public mixed $userService;
-
-    public function setUp(): void
-    {
-        parent::setUp();
-        $this->userService = app('UserService');
-    }
-
     public function test_create_user()
     {
         $data = [
@@ -25,7 +17,9 @@ class UserServiceTest extends TestCase
             'password' => fake()->password
         ];
 
-        $user = $this->userService->createUser($data);
+        $userService = app('UserService');
+        $user = $userService->createUser($data);
+
         $this->assertModelExists($user);
     }
 }
