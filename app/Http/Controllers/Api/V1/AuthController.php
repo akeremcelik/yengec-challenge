@@ -11,12 +11,17 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
+    public mixed $authService;
+
+    public function __construct()
+    {
+        $this->authService = app('AuthService');
+    }
+
     public function register(RegisterRequest $request): UserResource
     {
         $data = $request->validated();
-
-        $userService = app('UserService');
-        $user = $userService->createUser($data);
+        $user = $this->authService->register($data);
 
         return UserResource::make($user);
     }
@@ -29,8 +34,7 @@ class AuthController extends Controller
             $email = $data['email'];
             $password = $data['password'];
 
-            $loginService = app('LoginService');
-            $token = $loginService->login($email, $password);
+            $token = $this->authService->login($email, $password);
 
             return response()->json([
                 'token' => $token,

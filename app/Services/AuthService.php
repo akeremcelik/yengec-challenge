@@ -5,8 +5,20 @@ namespace App\Services;
 use App\Exceptions\WrongCredentialsException;
 use Illuminate\Support\Facades\Auth;
 
-class LoginService
+class AuthService
 {
+    public function register(array $data)
+    {
+        $registrationData = [
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => $data['password'],
+        ];
+
+        $userService = app('UserService');
+        return $userService->createUser($registrationData);
+    }
+
     /**
      * @throws WrongCredentialsException
      */
