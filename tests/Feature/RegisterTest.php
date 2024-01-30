@@ -38,4 +38,16 @@ class RegisterTest extends TestCase
             ->assertStatus(422)
             ->assertInvalid(['email']);
     }
+
+    public function test_register_with_name_failure(): void
+    {
+        $data = [
+            'email' => fake()->email,
+            'password' => fake()->password
+        ];
+
+        $this->json('POST', route('register'), $data)
+            ->assertStatus(422)
+            ->assertInvalid(['name']);
+    }
 }
