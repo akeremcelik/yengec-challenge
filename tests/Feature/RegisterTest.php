@@ -9,14 +9,6 @@ use Tests\TestCase;
 
 class RegisterTest extends TestCase
 {
-    public mixed $userService;
-
-    public function setUp(): void
-    {
-        parent::setUp();
-        $this->userService = app('UserService');
-    }
-
     public function test_register(): void
     {
         $data = [
