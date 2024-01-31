@@ -24,9 +24,9 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton('AuthService', AuthService::class);
         $this->app->singleton('IntegrationService', IntegrationService::class);
 
-        $this->app->singleton('IntegrationManager', IntegrationManager::class);
         $this->app->singleton('N11Adapter', N11Adapter::class);
         $this->app->singleton('TrendyolAdapter', TrendyolAdapter::class);
+        $this->app->singleton('IntegrationManager', IntegrationManager::class);
     }
 
     /**

@@ -2,7 +2,7 @@
 
 namespace App\Services\ThirdParty\Providers;
 
-class n11
+class N11
 {
     public function saveIntegration(array $data): array
     {

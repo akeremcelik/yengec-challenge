@@ -3,15 +3,15 @@
 namespace App\Services\ThirdParty;
 
 use App\Services\ThirdParty\Contracts\IntegrationInterface;
-use App\Services\ThirdParty\Providers\n11;
+use App\Services\ThirdParty\Providers\N11;
 
 class N11Adapter implements IntegrationInterface
 {
-    public n11 $library;
+    public N11 $library;
 
     public function __construct()
     {
-        $this->library = new n11();
+        $this->library = new N11();
     }
 
     public function createIntegration(array $data): array

@@ -2,7 +2,7 @@
 
 namespace App\Services\ThirdParty\Providers;
 
-class trendyol
+class Trendyol
 {
     public function saveIntegration(array $data): array
     {

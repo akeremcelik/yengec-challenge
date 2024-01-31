@@ -3,15 +3,15 @@
 namespace App\Services\ThirdParty;
 
 use App\Services\ThirdParty\Contracts\IntegrationInterface;
-use App\Services\ThirdParty\Providers\trendyol;
+use App\Services\ThirdParty\Providers\Trendyol;
 
 class TrendyolAdapter implements IntegrationInterface
 {
-    public trendyol $library;
+    public Trendyol $library;
 
     public function __construct()
     {
-        $this->library = new trendyol();
+        $this->library = new Trendyol();
     }
 
     public function createIntegration(array $data): array
