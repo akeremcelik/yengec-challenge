@@ -11,12 +11,12 @@ class IntegrationManager
         return $integrationInterface->createIntegration($data);
     }
 
-    public function updateIntegration(IntegrationInterface $integrationInterface, int $reference, array $data)
+    public function updateIntegration(IntegrationInterface $integrationInterface, string $reference, array $data)
     {
         return $integrationInterface->updateIntegration($reference, $data);
     }
 
-    public function deleteIntegration(IntegrationInterface $integrationInterface, int $reference)
+    public function deleteIntegration(IntegrationInterface $integrationInterface, string $reference)
     {
         return $integrationInterface->deleteIntegration($reference);
     }

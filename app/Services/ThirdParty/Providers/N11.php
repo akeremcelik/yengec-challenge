@@ -12,14 +12,14 @@ class N11
         ];
     }
 
-    public function modifyIntegration(int $reference, array $data): array
+    public function modifyIntegration(string $reference, array $data): array
     {
         return [
             'status' => true,
         ];
     }
 
-    public function destroyIntegration(int $reference): array
+    public function destroyIntegration(string $reference): array
     {
         return [
             'status' => true,

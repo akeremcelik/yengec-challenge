@@ -59,7 +59,7 @@ class IntegrationController extends Controller
     public function destroy(Integration $integration): \Illuminate\Http\Response
     {
         $marketplaceType = MarketplaceType::from($integration->marketplace->name);
-        $response = $this->integrationManager->updateIntegration($marketplaceType->adapter(), $integration->reference);
+        $response = $this->integrationManager->deleteIntegration($marketplaceType->adapter(), $integration->reference);
 
         $this->integrationService->deleteIntegration($integration);
 

@@ -19,12 +19,12 @@ class N11Adapter implements IntegrationInterface
         return $this->library->saveIntegration($data);
     }
 
-    public function updateIntegration(int $reference, array $data): array
+    public function updateIntegration(string $reference, array $data): array
     {
         return $this->library->modifyIntegration($reference, $data);
     }
 
-    public function deleteIntegration(int $reference): array
+    public function deleteIntegration(string $reference): array
     {
         return $this->library->destroyIntegration($reference);
     }
