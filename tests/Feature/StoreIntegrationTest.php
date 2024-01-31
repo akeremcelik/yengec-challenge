@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Enums\MarketplaceType;
+use App\Models\Marketplace;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -14,7 +14,7 @@ class StoreIntegrationTest extends TestCase
     {
         $user = User::factory()->create();
         $data = [
-            'marketplace' => fake()->randomElement(MarketplaceType::cases())->value,
+            'marketplace' => Marketplace::factory()->create()->name,
             'username' => fake()->userName,
             'password' => fake()->password,
         ];
@@ -29,7 +29,7 @@ class StoreIntegrationTest extends TestCase
     {
         $user = User::factory()->create();
         $data = [
-            'marketplace' => fake()->randomElement(MarketplaceType::cases())->value,
+            'marketplace' => Marketplace::factory()->create()->name,
             'password' => fake()->password,
         ];
 

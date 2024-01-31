@@ -15,6 +15,5 @@ abstract class TestCase extends BaseTestCase
         parent::setUp();
 
         Artisan::call('passport:install');
-        $this->seed();
     }
 }
