@@ -18,7 +18,6 @@ class IntegrationResource extends JsonResource
             'id' => $this->id,
             'username' => $this->username,
             'marketplace' => $this->marketplace,
-            'user' => $this->user,
         ];
     }
 }

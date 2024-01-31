@@ -4,8 +4,8 @@ namespace App\Enums;
 
 enum MarketplaceType: string
 {
-    case N11 = 'N11';
-    case TRENDYOL = 'Trendyol';
+    case N11 = 'n11';
+    case TRENDYOL = 'trendyol';
 
     public function adapter()
     {

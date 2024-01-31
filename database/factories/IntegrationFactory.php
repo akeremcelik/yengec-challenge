@@ -21,7 +21,6 @@ class IntegrationFactory extends Factory
         return [
             'marketplace_id' => Marketplace::factory()->create()->id,
             'reference' => fake()->word,
-            'user_id' => User::factory()->create()->id,
             'username' => fake()->userName,
             'password' => fake()->password,
         ];

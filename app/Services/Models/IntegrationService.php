@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\Models;
 
 use App\Models\Integration;
 use App\Repositories\Contracts\BaseRepositoryInterface;
 use App\Repositories\Contracts\MarketplaceRepositoryInterface;
-use Illuminate\Support\Facades\Auth;
 
 class IntegrationService
 {
@@ -27,7 +26,6 @@ class IntegrationService
         $integrationData = [
             'marketplace_id' => $marketplace->id,
             'reference' => $data['reference'],
-            'user_id' => Auth::user()->id,
             'username' => $data['username'],
             'password' => $data['password'],
         ];

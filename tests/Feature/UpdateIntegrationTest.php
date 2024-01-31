@@ -23,6 +23,6 @@ class UpdateIntegrationTest extends TestCase
         $this->actingAs($user, 'api')
             ->json('PATCH', route('integration.update', ['integration' => $integration->id]), $data)
             ->assertStatus(200)
-            ->assertJsonStructure(['id', 'username', 'marketplace', 'user']);
+            ->assertJsonStructure(['id', 'username', 'marketplace']);
     }
 }

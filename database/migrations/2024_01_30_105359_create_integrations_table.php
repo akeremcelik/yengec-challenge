@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('integrations', function (Blueprint $table) {
             $table->id();
             $table->foreignId('marketplace_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('username');
             $table->string('password');
             $table->timestamps();
