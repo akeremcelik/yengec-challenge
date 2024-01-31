@@ -21,7 +21,7 @@ class IntegrationController extends Controller
     public function store(StoreIntegrationRequest $request): IntegrationResource
     {
         $data = $request->validated();
-        $integration = $this->integrationCommonService->createIntegration($data);
+        $integration = $this->integrationCommonService->createCommonIntegration($data);
 
         return IntegrationResource::make($integration);
     }
@@ -29,14 +29,14 @@ class IntegrationController extends Controller
     public function update(UpdateIntegrationRequest $request, Integration $integration): IntegrationResource
     {
         $data = $request->validated();
-        $integration = $this->integrationCommonService->updateIntegration($integration, $data);
+        $integration = $this->integrationCommonService->updateCommonIntegration($integration, $data);
 
         return IntegrationResource::make($integration);
     }
 
     public function destroy(Integration $integration): \Illuminate\Http\Response
     {
-        $this->integrationCommonService->deleteIntegration($integration);
+        $this->integrationCommonService->deleteCommonIntegration($integration);
 
         return response()->noContent();
     }

@@ -12,6 +12,7 @@ class Integration extends Model
 
     protected $fillable = [
         'marketplace_id',
+        'user_id',
         'reference',
         'username',
         'password',
@@ -24,5 +25,10 @@ class Integration extends Model
     public function marketplace(): BelongsTo
     {
         return $this->belongsTo(Marketplace::class);
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
     }
 }

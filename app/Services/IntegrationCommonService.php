@@ -16,7 +16,7 @@ class IntegrationCommonService
         $this->integrationManager = app('IntegrationManager');
     }
 
-    public function createIntegration(array $data)
+    public function createCommonIntegration(array $data)
     {
         $marketplaceType = MarketplaceType::from($data['marketplace']);
 
@@ -33,7 +33,7 @@ class IntegrationCommonService
         return $integration;
     }
 
-    public function updateIntegration(Integration $integration, array $data)
+    public function updateCommonIntegration(Integration $integration, array $data)
     {
         $marketplaceType = MarketplaceType::from($integration->marketplace->name);
 
@@ -49,7 +49,7 @@ class IntegrationCommonService
         return $integration;
     }
 
-    public function deleteIntegration(Integration $integration)
+    public function deleteCommonIntegration(Integration $integration)
     {
         $marketplaceType = MarketplaceType::from($integration->marketplace->name);
         $response = $this->integrationManager->deleteIntegration($marketplaceType->adapter(), $integration->reference);

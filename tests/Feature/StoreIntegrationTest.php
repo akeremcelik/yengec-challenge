@@ -22,7 +22,7 @@ class StoreIntegrationTest extends TestCase
         $this->actingAs($user, 'api')
             ->json('POST', route('integration.store'), $data)
             ->assertStatus(201)
-            ->assertJsonStructure(['id', 'username', 'marketplace']);
+            ->assertJsonStructure(['id', 'username', 'marketplace', 'user']);
     }
 
     public function test_store_integration_with_username_failure(): void
