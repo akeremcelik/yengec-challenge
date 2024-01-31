@@ -28,6 +28,6 @@ class Trendyol
 
     protected function reference(): string
     {
-        return 'trendyol_' . time();
+        return 'Trendyol_' . time();
     }
 }
