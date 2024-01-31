@@ -14,6 +14,11 @@ class IntegrationResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'username' => $this->username,
+            'marketplace' => $this->marketplace,
+            'user' => $this->user,
+        ];
     }
 }

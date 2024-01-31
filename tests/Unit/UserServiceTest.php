@@ -7,8 +7,6 @@ use Tests\TestCase;
 
 class UserServiceTest extends TestCase
 {
-    use RefreshDatabase;
-
     public function test_create_user_method()
     {
         $data = [

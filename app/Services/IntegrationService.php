@@ -33,4 +33,14 @@ class IntegrationService
 
         return $this->integrationRepository->create($integrationData);
     }
+
+    public function updateIntegration(Integration $integration, array $data)
+    {
+        return $this->integrationRepository->update($integration->id, $data);
+    }
+
+    public function deleteIntegration(Integration $integration)
+    {
+        return $this->integrationRepository->delete($integration->id);
+    }
 }

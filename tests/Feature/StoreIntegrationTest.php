@@ -22,6 +22,20 @@ class StoreIntegrationTest extends TestCase
         $this->actingAs($user, 'api')
             ->json('POST', route('integration.store'), $data)
             ->assertStatus(201)
-            ->assertJsonStructure(['marketplace_id', 'user_id', 'username', 'password']);
+            ->assertJsonStructure(['id', 'username', 'marketplace', 'user']);
+    }
+
+    public function test_store_integration_with_username_failure(): void
+    {
+        $user = User::factory()->create();
+        $data = [
+            'marketplace' => fake()->randomElement(MarketplaceType::cases())->value,
+            'password' => fake()->password,
+        ];
+
+        $this->actingAs($user, 'api')
+            ->json('POST', route('integration.store'), $data)
+            ->assertStatus(422)
+            ->assertInvalid(['username']);
     }
 }
