@@ -28,6 +28,6 @@ class N11
 
     protected function reference(): string
     {
-        return 'N11_' . time();
+        return 'n11_' . time();
     }
 }
