@@ -17,6 +17,7 @@ class IntegrationServiceTest extends TestCase
 
         $data = [
             'marketplace' => Marketplace::factory()->create()->name,
+            'reference' => fake()->word,
             'username' => fake()->userName,
             'password' => fake()->password,
         ];

@@ -26,6 +26,7 @@ class IntegrationService
 
         $integrationData = [
             'marketplace_id' => $marketplace->id,
+            'reference' => $data['reference'],
             'user_id' => Auth::user()->id,
             'username' => $data['username'],
             'password' => $data['password'],

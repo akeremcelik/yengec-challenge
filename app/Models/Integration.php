@@ -12,6 +12,7 @@ class Integration extends Model
 
     protected $fillable = [
         'marketplace_id',
+        'reference',
         'user_id',
         'username',
         'password',
