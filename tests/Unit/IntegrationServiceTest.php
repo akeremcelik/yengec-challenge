@@ -16,7 +16,7 @@ class IntegrationServiceTest extends TestCase
         $this->actingAs($user);
 
         $data = [
-            'marketplace' => Marketplace::factory()->create()->name,
+            'marketplace_id' => Marketplace::factory()->create()->id,
             'reference' => fake()->word,
             'username' => fake()->userName,
             'password' => fake()->password,

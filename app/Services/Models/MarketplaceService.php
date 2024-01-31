@@ -2,8 +2,7 @@
 
 namespace App\Services\Models;
 
-use App\Models\Marketplace;
-use App\Repositories\Contracts\BaseRepositoryInterface;
+use App\Repositories\Contracts\MarketplaceRepositoryInterface;
 
 class MarketplaceService
 {
@@ -11,9 +10,7 @@ class MarketplaceService
 
     public function __construct()
     {
-        $this->marketplaceRepository = app(BaseRepositoryInterface::class, [
-            'model' => app(Marketplace::class),
-        ]);
+        $this->marketplaceRepository = app(MarketplaceRepositoryInterface::class);
     }
 
     public function createMarketplace(string $name)
@@ -23,5 +20,10 @@ class MarketplaceService
         ];
 
         return $this->marketplaceRepository->create($data);
+    }
+
+    public function findMarketplaceByName(string $name)
+    {
+        return $this->marketplaceRepository->findMarketplaceByName($name);
     }
 }

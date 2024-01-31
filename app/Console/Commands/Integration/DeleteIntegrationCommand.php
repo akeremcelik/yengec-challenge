@@ -4,14 +4,14 @@ namespace App\Console\Commands\Integration;
 
 use Illuminate\Console\Command;
 
-class CreateIntegrationCommand extends Command
+class DeleteIntegrationCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'app:create-integration-command {marketplace} {username} {password}';
+    protected $signature = 'app:delete-integration-command {integration}';
 
     /**
      * The console command description.
@@ -25,13 +25,10 @@ class CreateIntegrationCommand extends Command
      */
     public function handle()
     {
-        $data = [
-            'marketplace' => $this->argument('marketplace'),
-            'username' => $this->argument('username'),
-            'password' => $this->argument('password'),
-        ];
-
+        $integrationService = app('IntegrationService');
         $integrationCommonService = app('IntegrationCommonService');
-        $integrationCommonService->createCommonIntegration($data);
+
+        $integration = $integrationService->findIntegrationById($this->argument('integration'));
+        $integrationCommonService->deleteCommonIntegration($integration);
     }
 }
