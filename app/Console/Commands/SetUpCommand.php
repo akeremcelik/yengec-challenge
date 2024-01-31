@@ -24,7 +24,7 @@ class SetUpCommand extends Command
     /**
      * Execute the console command.
      */
-    public function handle()
+    public function handle(): void
     {
         Artisan::call('migrate');
         Artisan::call('passport:install');

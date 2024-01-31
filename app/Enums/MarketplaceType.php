@@ -18,9 +18,6 @@ enum MarketplaceType: string
             case self::TRENDYOL:
                 $adapter = app('TrendyolAdapter');
                 break;
-
-            default:
-                break;
         }
 
         return $adapter ?? null;

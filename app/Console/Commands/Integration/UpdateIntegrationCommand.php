@@ -23,7 +23,7 @@ class UpdateIntegrationCommand extends Command
     /**
      * Execute the console command.
      */
-    public function handle()
+    public function handle(): void
     {
         $data = [];
 
@@ -32,10 +32,6 @@ class UpdateIntegrationCommand extends Command
 
         if ($this->option('password'))
             $data['password'] = $this->option('password');
-
-        if (empty($data)) {
-            throw new \Exception('Invalid data');
-        }
 
         $integrationService = app('IntegrationService');
         $integrationCommonService = app('IntegrationCommonService');

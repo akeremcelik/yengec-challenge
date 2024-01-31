@@ -23,7 +23,7 @@ class DeleteIntegrationCommand extends Command
     /**
      * Execute the console command.
      */
-    public function handle()
+    public function handle(): void
     {
         $integrationService = app('IntegrationService');
         $integrationCommonService = app('IntegrationCommonService');
