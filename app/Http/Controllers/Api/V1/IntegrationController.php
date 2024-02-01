@@ -14,7 +14,8 @@ class IntegrationController extends Controller
 {
     public function __construct(public IntegrationCommonService $integrationCommonService)
     {
-        //
+        $this->middleware('validate.integration.user')
+            ->only('update', 'destroy');
     }
 
     public function store(StoreIntegrationRequest $request): IntegrationResource
