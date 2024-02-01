@@ -7,15 +7,14 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\V1\LoginRequest;
 use App\Http\Requests\Api\V1\RegisterRequest;
 use App\Http\Resources\Api\V1\UserResource;
+use App\Services\AuthService;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-    public mixed $authService;
-
-    public function __construct()
+    public function __construct(public AuthService $authService)
     {
-        $this->authService = app('AuthService');
+        //
     }
 
     public function register(RegisterRequest $request): UserResource

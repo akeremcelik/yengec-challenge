@@ -7,22 +7,28 @@ class Trendyol
     public function saveIntegration(array $data): array
     {
         return [
-            'status' => true,
-            'reference' => $this->reference(),
+            'SaveIntegrationResponse' => [
+                'status' => true,
+                'trendyol_reference' => $this->reference(),
+            ],
         ];
     }
 
     public function modifyIntegration(string $reference, array $data): array
     {
         return [
-            'status' => true,
+            'ModifyIntegrationResponse' => [
+                'status' => true,
+            ],
         ];
     }
 
     public function destroyIntegration(string $reference): array
     {
         return [
-            'status' => true,
+            'DestroyIntegrationResponse' => [
+                'status' => true,
+            ],
         ];
     }
 

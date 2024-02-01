@@ -19,7 +19,10 @@ class TrendyolAdapterTest extends TestCase
 
         $this->assertIsArray($response);
         $this->assertArrayHasKey('status', $response);
-        $this->assertArrayHasKey('reference', $response);
+
+        $response['status'] ?
+            $this->assertArrayHasKey('reference', $response) :
+            $this->assertArrayHasKey('message', $response);
     }
 
     public function test_update_integration(): void
@@ -36,6 +39,9 @@ class TrendyolAdapterTest extends TestCase
 
         $this->assertIsArray($response);
         $this->assertArrayHasKey('status', $response);
+
+        if (!$response['status'])
+            $this->assertArrayHasKey('message', $response);
     }
 
     public function test_delete_integration(): void
@@ -47,5 +53,8 @@ class TrendyolAdapterTest extends TestCase
 
         $this->assertIsArray($response);
         $this->assertArrayHasKey('status', $response);
+
+        if (!$response['status'])
+            $this->assertArrayHasKey('message', $response);
     }
 }

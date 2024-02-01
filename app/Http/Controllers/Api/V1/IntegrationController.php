@@ -8,15 +8,14 @@ use App\Http\Requests\Api\V1\StoreIntegrationRequest;
 use App\Http\Requests\Api\V1\UpdateIntegrationRequest;
 use App\Http\Resources\Api\V1\IntegrationResource;
 use App\Models\Integration;
+use App\Services\IntegrationCommonService;
 use Illuminate\Http\Request;
 
 class IntegrationController extends Controller
 {
-    public mixed $integrationCommonService;
-
-    public function __construct()
+    public function __construct(public IntegrationCommonService $integrationCommonService)
     {
-        $this->integrationCommonService = app('IntegrationCommonService');
+        //
     }
 
     public function store(StoreIntegrationRequest $request): IntegrationResource
